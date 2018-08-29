@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>For</title>
+</head>
+<body>
+<script>
+    let sour;
+    sour = "<table border='1' cellspacing='0' cellpadding='3'>"
+    for (let i =1; i<= 10; i++){
+        sour += "<tr >"
+        for (let j=1; j<=10; j++){
+            sour += "<td align='center'>"+(i*j)+"</td>"
+        }
+        sour += "</tr>"
+    }
+    sour += "</table>"
+    document.write(sour)
+</script>
+</body>
+</html>
