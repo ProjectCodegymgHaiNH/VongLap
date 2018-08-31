@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm số nguyên tố</title>
+</head>
+<body>
+<button type="button" onclick="loc_so_nguyen_to()">Tìm 20 số nguyên</button>
+<script>
+    function loc_so_nguyen_to() {
+        for (let i=0 ;i<50; i++){
+            if(i<2){
+                console.log(i+" Không phải")
+            }else if(i == 2 || i ==3){
+                console.log(i +"Đúng")
+            }else{
+                for (let j=2; j<(i-1);j++){
+                    console.log(i+" "+j)
+                }
+            }
+
+        }
+    }
+           
+</script>
+</body>
+</html>
