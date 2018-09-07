@@ -4,7 +4,15 @@
     <meta charset="UTF-8">
     <title>Bài tập vòng lặp</title>
 </head>
-<body>
+<body >
+<button type="button" onclick="tinh_giai_thua()">Bài 2 </button>
+Tìm giai thừa <br> <br>
+<button type="button" onclick="in_tam_giac()">Bài 3 </button>
+In ra tam giác <br> <br>
+<button type="button" onclick="in_hinh_vuong()">Bài 4 </button>
+In ra hình vuông <br> <br>
+
+
 <script>
     function tinh_giai_thua() {
         let so = Number(prompt("Nhập một số để tính giai thừa"))
@@ -15,10 +23,74 @@
             alert("Error!")
         }else{
             for (let i=1;i<=so;i++) {
-                gt = gt*i
+                giai_thua = giai_thua*i
             }
         }
-        alert("Giai thừa của "+so+" = "+gt)
+        document.write("Giai thừa của "+so+" = "+giai_thua)
+    }
+    
+    function in_tam_giac() {
+        //let stars = Number(prompt("Nhập số dòng hiển thị sao VD 5:"))
+        for (let i = 0; i<5; i++){
+            for (let j=0;j<=i;j++){
+                let sao = "*"
+                document.write(sao)
+            }
+            document.write("<br>")
+        }
+
+        document.write("<br><br>")
+
+        for (let i = 5; i>0; i--){
+            for (let j=0;j<i;j++){
+                let sao = "*"
+                document.write(sao)
+            }
+            document.write("<br>")
+        }
+
+        document.write("<br><br>")
+
+        document.write("<div style='width: 50px' align='right'>")
+        for (let i = 0; i<5; i++){
+            for (let j=0;j<=i;j++){
+                let sao = "*"
+
+                document.write(sao)
+                //
+            }
+            document.write("<br>")
+        }
+        document.write("</div><br><br>")
+
+        document.write("<div style='width: 50px' align='right'>")
+        for (let i = 5; i>0; i--){
+            for (let j=0;j<i;j++){
+                let sao = "*"
+                document.write(sao)
+            }
+            document.write("<br>")
+        }
+        document.write("</div>")
+    }
+    
+    function in_hinh_vuong() {
+        let a = " "
+        for (let i=0;i<10;i++){
+            for (let j = 0;j<=30;j++){
+                if(i==0 || i == 9){
+                    document.write("*")
+                }
+
+                if(j== 0 || j == 30){
+
+                    document.write("*")
+
+                }
+            }
+
+            document.write("<br>")
+        }
     }
 </script>
 </body>

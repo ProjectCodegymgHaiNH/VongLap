@@ -1,27 +1,91 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <title>Tìm số nguyên tố</title>
+    <title>số nguyên tố</title>
 </head>
 <body>
-<button type="button" onclick="loc_so_nguyen_to()">Tìm 20 số nguyên</button>
-<script>
-    function loc_so_nguyen_to() {
-        for (let i=0 ;i<50; i++){
-            if(i<2){
-                console.log(i+" Không phải")
-            }else if(i == 2 || i ==3){
-                console.log(i +"Đúng")
-            }else{
-                for (let j=2; j<(i-1);j++){
-                    console.log(i+" "+j)
-                }
-            }
+<input type="button" onclick="soLuongSoNguyenTo()" value="Tìm số nguyên tố">
 
+<script>
+    // function nguyento() {
+    //     let so_nguyen_to = "";
+    //     let count =0;
+    //     let number = 0;
+    //     for (let i=0;;i++){
+    //         if (i<=1){
+    //             number =0
+    //         } else if( i == 2 || i == 3){
+    //             count++
+    //             so_nguyen_to+= i+" "
+    //         }else if(i%2==0){
+    //             number = 0
+    //         }else if(i>=4){
+    //             for (let j=3;j<(i-1);j++){
+    //                  if(i%j == 0){
+    //                      number = 0
+    //                      break
+    //                  }else{
+    //                      number++
+    //                  }
+    //             }
+    //
+    //             if(number>0){
+    //                 so_nguyen_to += i+ " "
+    //                 count ++
+    //                 if(count == 20){
+    //                     break
+    //                 }
+    //             }
+    //
+    //         }
+    //     }
+    //
+    //     document.write("20 Số nguyên tố gồm: "+so_nguyen_to)
+    // }
+    
+    function tinhSoNguyenTo(soluong) {
+        let so_nguyen_to = [];
+        let count =0;
+        let number = 0;
+        for (let i=0;;i++){
+            if (i<=1){
+                number =0
+            } else if( i == 2 || i == 3){
+                count++
+                so_nguyen_to.push(i)
+            }else if(i%2==0){
+                number = 0
+            }else if(i>=4){
+                for (let j=3;j<(i-1);j++){
+                    if(i%j == 0){
+                        number = 0
+                        break
+                    }else{
+                        number++
+                    }
+                }
+
+                if(number>0){
+                    so_nguyen_to.push(i)
+                    count ++
+                    if(count == soluong){
+                        break
+                    }
+                }
+
+            }
         }
+
+        return so_nguyen_to
     }
-           
+    
+    function soLuongSoNguyenTo() {
+        let so_luong = Number(prompt("Nhập số lượng số nguyên tố cần tìm "))
+        let so_nguyen_to = tinhSoNguyenTo(so_luong)
+        document.write("Hiển thị "+so_luong+" số nguyên tố đầu tiên gồm soNguyenTo["+so_nguyen_to+"]")
+    }
+
 </script>
+
 </body>
 </html>
