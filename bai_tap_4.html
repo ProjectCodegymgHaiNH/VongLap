@@ -11,6 +11,10 @@ Tìm giai thừa <br> <br>
 In ra tam giác <br> <br>
 <button type="button" onclick="in_hinh_vuong()">Bài 4 </button>
 In ra hình vuông <br> <br>
+<button type="button" onclick="bai5()">Bài 5 </button>
+Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất hàng tháng. <br> <br>
+<button type="button" onclick="bai6()">Bài 4 </button>
+In hình trái tim <br> <br>
 
 
 <script>
@@ -76,21 +80,38 @@ In ra hình vuông <br> <br>
     
     function in_hinh_vuong() {
         let a = " "
-        for (let i=0;i<10;i++){
+        for (let i=0;i<=10;i++){
             for (let j = 0;j<=30;j++){
-                if(i==0 || i == 9){
-                    document.write("*")
+                if (i == 0 || i == 10){
+                    document.write("<a style='color: red'>*<a>")
+                }else{
+                    document.write("<a style='color: white'>*<a>")
                 }
-
-                if(j== 0 || j == 30){
-
-                    document.write("*")
-
+                if (j == 0 || j== 30) {
+                    document.write("<a style='color: red'>*<a>")
                 }
             }
-
             document.write("<br>")
         }
+    }
+
+    function bai5() {
+        let sotien = Number(prompt("Nhập số tiền gửi ngân hàng lãi suất 5%/năm", 0))
+        let sothang = Number(prompt("Nhập số tháng gửi"),1)
+        let tienlai_thang = 0
+        let tongtienlai = tienlai_thang
+        document.write("Số tiền bạn gửi là "+sotien +" VNĐ trong "+sothang+" tháng với lãi suất 5%/ năm"+"<br>")
+        for (let i=0; i<sothang;i++){
+            tienlai_thang = ((sotien*5)/100)/12
+            tongtienlai += tienlai_thang
+            sotien+=tienlai_thang
+            document.write("Tiền lãi tháng "+(i+1)+" là "+tienlai_thang.toFixed(0)+" VNĐ<br>")
+        }
+        document.write("Tổng tiền lãi của bạn trong "+sothang+" là "+tongtienlai.toFixed(0)+" VNĐ")
+    }
+    
+    function bai6() {
+        
     }
 </script>
 </body>
